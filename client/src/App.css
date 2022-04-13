@@ -1,0 +1,497 @@
+html, body {
+  height: 100%;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App {
+  font-size: 14px;
+  position: relative;
+}
+
+#loading-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #eee4;
+  text-align: center;
+}
+
+#loading-screen > span {
+  font-size: 150px;
+  margin-top: 150px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.header {
+  height: 100px;
+  background-image: url(./images/header.png);
+  background-size: cover;
+  position: relative;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.tab-title {
+  position: absolute;
+  margin: auto;
+  width: 100%;
+  bottom: 0;
+}
+
+.tab-title .ant-btn {
+  width: 120px;
+  height: 40px;
+  text-shadow: 2px 2px 2px #ccc;
+  font-size: 15px;
+}
+
+.tab-title .songs-btn {
+  border-right: none;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-radius: 0;
+  border-top-left-radius: 7px;
+}
+
+.tab-title .singers-btn {
+  border-left: none;
+  border-bottom: 1px solid transparent;
+  border-top: 1px solid transparent;
+  border-radius: 0;
+  border-top-right-radius: 7px;
+}
+
+.tab-title .ant-btn.active {
+  border-bottom: 2px solid #40a9ff;
+  font-weight: bold;
+}
+
+.tab-title .ant-btn:hover, .tab-title .ant-btn:focus {
+  border-top-color: transparent;
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+
+.wrapper {
+  display: flex;
+  height: calc(100% - 100px);
+  background-color: rgb(254, 151, 143);
+}
+
+.sidebar {
+  width: 240px;
+  overflow: auto;
+  background-color: rgb(161, 208, 241);
+  padding: 16px 0 16px 16px;
+}
+
+.menu {
+  user-select: none;
+  margin-bottom: 10px;
+}
+
+.menu .hide {
+  display: none;
+}
+
+.menu .show {
+  display: block;
+}
+
+.menu-title { 
+  font-size: 19px;
+  position: relative;
+  padding-left: 20px;
+  font-weight: bold;
+  color: darkblue;
+}
+
+.menu-title:hover {
+  cursor: pointer;
+}
+
+.menu-title > span {
+  top: 8px;
+  position: absolute;
+  left: 0;
+  font-size: 16px;
+}
+
+.menu-list > div {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  margin-left: 20px;
+  padding: 5px 25px 5px 10px;
+  position: relative;
+}
+
+.menu-list > div > span.delete-folder, .menu-list > div > span.delete-public-playlist, .menu-list > div > span.delete-queue-history, .menu-list > div > span.delete-singer, .menu-list > div > span.delete-singer-playlist {
+  position: absolute;
+  top: 6px;
+  right: 12px;
+  font-size: 10px;
+}
+
+.menu-list > div > span.reload-folder {
+  position: relative;
+  font-size: 14px;
+  top: -3px;
+  margin-left: -4px;
+  margin-right: 6px;
+}
+
+.menu-list .add-btn {
+  color: blue;
+}
+
+.menu-list .node-btn:hover, .menu-list .singer-btn:hover {
+  background-color: burlywood;
+}
+
+.menu-list .node-btn.active, .menu-list .singer-btn.active {
+  background-color: darksalmon
+}
+
+.add-modal {
+  width: 400px !important;
+}
+
+.add-modal .ant-modal-body {
+  padding: 0px 24px;
+}
+
+.modal-item:first-child {
+  border-top: none;
+}
+
+.modal-item {
+  border-top: 1px solid #ccc;
+  padding: 10px 0;
+  margin-bottom: 0;
+  text-indent: 10px;
+}
+
+.modal-item:hover {
+  background-color: #ccc;
+  cursor: pointer;
+}
+
+.modal-item.active {
+  background-color: cadetblue;
+
+}
+
+.main-section {
+    width: calc(55% - 140px);
+    overflow: auto;
+    white-space: nowrap;
+    margin: 0 16px;
+    border: 1px solid #eee;
+    background-color: white;
+    padding: 5px 0 0;
+}
+
+.main-section table {
+    text-align: left;
+}
+
+.main-section table td, .main-section table th {
+    padding: 5px 10px;
+}
+
+.main-section table tbody tr:hover {
+    cursor: pointer;
+    background-color: burlywood;
+}
+
+.main-title {
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+.main-section table thead {
+    background-color: rgb(114, 179, 226);
+    text-shadow: 2px 2px 2px white;
+}
+
+.search-field {
+    border: 1px solid #ccc;
+    margin-left: 12px;
+    font-size: 14px;
+    width: 120px;
+    padding: 0 5px;
+}
+
+#public-playlist-name, #singer-playlist-name {
+    border: 1px solid #ccc;
+    width: 180px;
+    padding: 3px 6px
+}
+
+.queue-section {
+  white-space: nowrap;
+  position: relative;
+  height: 100%;
+  padding: 8px 0 16px 0;
+  background-color: rgb(161, 208, 241);
+}
+
+#queue-section {
+  width: calc(45% - 120px);
+  background-color: white;
+}
+
+.queue-item {
+  white-space: nowrap;
+}
+
+.queue-item:hover {
+  cursor: pointer;
+}
+
+.queue-item:nth-child(2n) {
+  background-color: rgb(161, 208, 241);
+}
+
+.queue-item:nth-child(2n+1) {
+  background-color: rgb(212, 195, 219);
+}
+
+.queue-section table thead {
+  background-color: rgb(114, 179, 226);
+  text-shadow: 2px 2px 2px white;
+}
+
+.search-field {
+  border: 1px solid #ccc;
+  margin-left: 12px;
+  font-size: 14px;
+  width: 120px;
+  padding: 0 5px;
+}
+
+.queue-section table {
+  text-align: left;
+}
+
+.queue-section table th {
+  padding: 5px 10px;
+}
+
+.queue-section table td {
+  padding: 3px 10px 2px;
+}
+
+.queue-section table tbody tr:hover {
+  cursor: pointer !important;
+  background-color: burlywood !important;
+}
+
+.queue-item.top-border {
+  border-top: 1px solid #555;
+}
+
+#right-menu {
+  position: fixed;
+  border: 1px solid #ddd;
+}
+
+#right-menu button {
+  background-color: white;
+  color: black;
+  width: 100%;
+  text-align: left;
+}
+
+#right-menu button:hover {
+  background-color: #ddd !important;
+}
+
+.current-letter{
+  text-shadow: 2px 2px 2px black;
+  color:white;
+}
+.current-time{
+  font-size: 17px;
+}
+.current-video {
+  color:blue;
+}
+.current-video:hover {
+  cursor: pointer;
+}
+.video-icon{
+  vertical-align: 0px !important;
+  margin-left:5px;
+  font-size: 22px;
+}
+
+.singers-section .songs-part, .singers-section .singer-history-part {
+  overflow: auto;
+}
+
+.singer-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.singer-wrap > div {
+  width: 50%;
+  padding: 6px 16px 0;
+}
+
+.singer-button {
+  margin-top: 5px;
+}
+
+.singer-section .main-section {
+  width: 100%;
+}
+
+.videoplayer-container{
+    position: fixed;
+    left:50%;
+    top:50%;
+    width:40%;
+    height:30%;
+    margin-top: -15%; 
+    margin-left: -20%; 
+}
+
+.VideoPlayer_VideoPlayerWrapper__e2Ux3{
+  box-shadow:5px 5px 10px rgb(104, 103, 103), -5px -5px 10px rgb(104, 103, 103) ,
+     -5px 5px 10px rgb(104, 103, 103),  5px -5px 10px rgb(104, 103, 103);
+}
+.hide-video{
+  display: none;
+}
+
+.singer-part {
+  margin-bottom: 5px;
+}
+
+.queue-item .queue-singer {
+  position: relative;
+  padding-right: 30px;
+}
+
+.queue-item .queue-singer > span {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  font-size: 12px;
+}
+
+.singer-select {
+  border: 1px solid #999;
+  border-radius: 3px;
+  outline: none;
+}
+
+.queue-item.active, .song-item.active {
+  background-color: gray;
+}
+
+.singer-btn, .note-btn {
+  white-space: nowrap;
+}
+
+.delete-modal .ant-modal-body, .delete-modal .ant-modal-footer {
+  text-align: center;
+}
+
+#song-table, #queue-table {
+  user-select: none;
+}
+
+.singers-section .ant-tabs-nav-list {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
+.singers-section .ant-tabs-nav-list .ant-tabs-tab {
+  font-size: 16px;
+}
+
+#table-wrapper {
+  overflow: auto;
+  height: calc(100% - 16px);
+}
+
+.question-modal .ant-modal-header, .question-modal .ant-modal-footer {
+  border: none;
+}
+
+.question-modal .ant-modal-body {
+  text-align: center;
+}
+
+.extra-option {
+  float: right;
+}
+
+.extra-option .ant-pagination {
+  display: inline-block;
+}
+
+.singers-section .ant-tabs {
+  position: relative;
+}
+
+.singers-section .extra-option {
+  position: absolute;
+  top: 15px;
+  right: 0;
+}
+
+.singers-section .main-title {
+  margin-bottom: 0;
+  padding-top: 0;
+}
+
+.volume-control {
+  width: 75px;
+}
+
+.volume-control .ant-slider-track {
+  background-color: #555;
+}
+
+.volume-control .ant-slider-handle {
+  border: solid 2px #555;
+}
+
+th.none, td.none {
+  display: none;
+}
